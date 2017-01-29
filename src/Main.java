@@ -3,6 +3,7 @@ import java.util.Scanner;
 /**
  * Created by Dmitrii on 29.12.2016.
  */
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -34,6 +35,7 @@ public class Main {
             else System.out.println("Бери больше");
         } while (correct != true);
     }
+
     public static boolean correctLevel(int level){
         if (level == 1) return true;
         else if (level == 2) return true;
