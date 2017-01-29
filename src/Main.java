@@ -28,11 +28,12 @@ public class Main {
         do {
             number = sc.nextInt();
             if (number > randomNumber)System.out.println("Бери меньше");
-            else if (number == randomNumber) {
+            else if (number < randomNumber)System.out.println("Бери больше");
+            else {
                 correct = true;
                 System.out.println("Ты угадал");
             }
-            else System.out.println("Бери больше");
+
         } while (correct != true);
     }
 
