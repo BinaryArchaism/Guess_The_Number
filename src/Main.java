@@ -31,7 +31,7 @@ public class Main {
             else if (number < randomNumber)System.out.println("Бери больше");
             else {
                 correct = true;
-                System.out.println("Ты угадал");
+                System.out.println("Ты угадал!");
             }
 
         } while (correct != true);
