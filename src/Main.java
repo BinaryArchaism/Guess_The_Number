@@ -33,14 +33,10 @@ public class Main {
                 correct = true;
                 System.out.println("Ты угадал!");
             }
-
         } while (correct != true);
     }
-
     public static boolean correctLevel(int level){
-        if (level == 1) return true;
-        else if (level == 2) return true;
-        else if (level == 3) return true;
+        if (level >= 1 && level <= 3) return true;
         else return false;
     }
 }
