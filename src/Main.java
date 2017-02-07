@@ -6,37 +6,50 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Игра угадай число \n Выбирете кто загадывает число \n 1. Вы \n 2. Компьютер");
         Scanner sc = new Scanner(System.in);
-        int number;
-        boolean correctLevel;
-        int level;
-        System.out.println("Игра угадай число от 0 до 10");
-        System.out.println("Выбирете уровень сложности \n 1. от 0 до 10 \n 2. от 0 до 20 \n 3. от 0 до 30");
+        int choose;
         do {
-            level = sc.nextInt();
-            correctLevel  = correctLevel(level);
-            if (correctLevel == true) break;
-            else System.out.println("Данного уровня сложности не существует");
+            choose = sc.nextInt();
+            if (choose == 1 || choose == 2) break;
         } while (true);
-        int n = 0;
-        if (level == 1) {n = 10;System.out.println("Вы выбрали уровень сложности 1 (от 0 до 10)");}
-        if (level == 2) {n = 20;System.out.println("Вы выбрали уровень сложности 2 (от 0 до 20)");}
-        if (level == 3) {n = 30;System.out.println("Вы выбрали уровень сложности 3 (от 0 до 30)");}
-        System.out.println("Введите число");
-        int randomNumber = (int)(Math.random()*n);
-        boolean correct = false;
-        do {
-            number = sc.nextInt();
-            if (number > randomNumber)System.out.println("Бери меньше");
-            else if (number < randomNumber)System.out.println("Бери больше");
-            else {
-                correct = true;
-                System.out.println("Ты угадал!");
-            }
-        } while (correct != true);
-    }
-    public static boolean correctLevel(int level){
-        if (level >= 1 && level <= 3) return true;
-        else return false;
+        if (choose == 1) {
+            (new CvsP()).start();
+        }
+        else {
+            (new PvsC()).start();
+        }
+
+//        int number;
+//        boolean correctLevel;
+//        int level;
+//        System.out.println("Игра угадай число от 0 до 10");
+//        System.out.println("Выбирете уровень сложности \n 1. от 0 до 10 \n 2. от 0 до 20 \n 3. от 0 до 30");
+//        do {
+//            level = sc.nextInt();
+//            correctLevel  = correctLevel(level);
+//            if (correctLevel == true) break;
+//            else System.out.println("Данного уровня сложности не существует");
+//        } while (true);
+//        int n = 0;
+//        if (level == 1) {n = 10;System.out.println("Вы выбрали уровень сложности 1 (от 0 до 10)");}
+//        if (level == 2) {n = 20;System.out.println("Вы выбрали уровень сложности 2 (от 0 до 20)");}
+//        if (level == 3) {n = 30;System.out.println("Вы выбрали уровень сложности 3 (от 0 до 30)");}
+//        System.out.println("Введите число");
+//        int randomNumber = (int)(Math.random()*n);
+//        boolean correct = false;
+//        do {
+//            number = sc.nextInt();
+//            if (number > randomNumber)System.out.println("Бери меньше");
+//            else if (number < randomNumber)System.out.println("Бери больше");
+//            else {
+//                correct = true;
+//                System.out.println("Ты угадал!");
+//            }
+//        } while (correct != true);
+//    }
+//    public static boolean correctLevel(int level){
+//        if (level >= 1 && level <= 3) return true;
+//        else return false;
     }
 }
