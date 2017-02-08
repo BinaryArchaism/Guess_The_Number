@@ -8,8 +8,13 @@ public class CvsP {
         Computer computer = new Computer();
         Player player = new Player();
 
+        System.out.println("Компьютер угадывает число:");
+        int computerNumber = computer.randomNumber(level.getLevel());
+        System.out.println(computerNumber);
         do {
-
-        }
+            computerNumber = computer.guessingComputer(player.status(), level.getLevel(), computerNumber);
+            if (computerNumber == 100) {break;}
+            else System.out.println(computerNumber);
+        } while (true);
     }
 }
