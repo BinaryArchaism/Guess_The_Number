@@ -3,17 +3,13 @@
  */
 public class PvsC {
     public void start() {
-        Level level = new Level();
+        Range level = new Range();
         level.setLevel();
-        Computer computer = new Computer();
-        Player player = new Player();
-
 
         int playerNumber;
-        int computerNumber = computer.randomNumber(level.getLevel());
+        int computerNumber = Computer.randomNumber(level.getMaxNum());
         do {
-
-            playerNumber = player.getNumber(level.getLevel());
+            playerNumber = Player.getNumber();
             if (playerNumber > computerNumber)System.out.println("Бери меньше");
             else if (playerNumber < computerNumber)System.out.println("Бери больше");
             else {

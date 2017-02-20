@@ -3,18 +3,21 @@
  */
 public class CvsP {
     public void start() {
-        Level level = new Level();
+        Range level = new Range();
         level.setLevel();
-        Computer computer = new Computer();
-        Player player = new Player();
+        System.out.println("Загадайте число от " + level.getMinNum() + " до " + level.getMaxNum()+"\n" +
+                "Нажмите клавишу Enter для продолжения"  );
+        Player.getEnter();
 
-        System.out.println("Компьютер угадывает число:");
-        int computerNumber = computer.randomNumber(level.getLevel());
-        System.out.println(computerNumber);
+        int status;
         do {
-            computerNumber = computer.guessingComputer(player.status(), level.getLevel(), computerNumber);
-            if (computerNumber == 100) {break;}
-            else System.out.println(computerNumber);
+            System.out.println("Компьютер угадывает число:");
+            int computerNumber = Computer.middle(level.getMinNum(), level.getMaxNum());
+            System.out.println(computerNumber);
+            status = Player.status();
+            if (status == 1) level.setMinNum(computerNumber + 1);
+            else if (status == 2) level.setMaxNum(computerNumber - 1);
+            else break;
         } while (true);
     }
 }
